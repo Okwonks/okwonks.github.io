@@ -14,3 +14,7 @@ img {
   vertical-align: middle;
   border: 0;
 }
+
+#right {
+  float: right;
+}
