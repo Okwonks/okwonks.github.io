@@ -1,5 +1,7 @@
 body {
   padding: 80px;
+  background-image: url("../images/back-ground.jpg");
+  background-attachment: fixed;
 }
 /* img {
    width: 50px;
@@ -17,4 +19,8 @@ img {
 
 #right {
   float: right;
+}
+
+#left {
+  float: left;
 }
