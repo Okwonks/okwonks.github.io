@@ -2,6 +2,7 @@ body {
   padding: 80px;
   background-image: url("../images/back-ground.jpg");
   background-attachment: fixed;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 /* img {
    width: 50px;
@@ -32,4 +33,17 @@ h2 {
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+form {
+  width: 80%;
+  display: block;
+  margin-top: 0em;
+}
+
+.form-item {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
 }

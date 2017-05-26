@@ -7,3 +7,5 @@ For a beginner writing this project was *hard!* I took the whole day to complete
 I am glad to have a portfolio up and have something to build upon.
 
 ### Project Setup: No setup is required
+
+The site can be viewed [here](https://okwonks.github.io/my-portfolio/)
