@@ -15,17 +15,38 @@ body {
 
 #banner {
   background-color: #3333ff !important;
-  height: 80px;
-  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  height: 50px;
+  box-shadow: 1px 3px 3px 2px rgba(0, 0, 0, 0.2);
   border-color: #0000ff;
+}
+
+#banner .container {
+  width: 95%;
+  max-width: 1024px;
+  /*justify-content: space-between;*/
+  align-items: center;
+  display: flex;
+  padding-right: 15px;
+  flex-flow: row wrap;
 }
 
 #right {
   float: right;
 }
 
+#footer-below {
+  text-align: center;
+  background-color: #3333ff;
+  padding: 25px 0;
+  width: 100%;
+}
+
 #left {
   float: left;
+}
+
+footer {
+  color: #fff;
 }
 
 h2 {
@@ -49,6 +70,16 @@ form {
   box-sizing: border-box;
 }
 
+header {
+  display: block;
+}
+
+nav {
+  font-size: 18px;
+  background: #3333ff;
+
+}
+
 body section#contact>div {
   margin: 0px auto;
   flex-flow: row wrap;
@@ -64,4 +95,23 @@ body section#contact>div {
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid black;
+}
+
+.navbar-fixed-top {
+  border-width: 0 0 1px;
+  padding-right: 0;
+  padding-left: 0;
+  right: 0;
+  left: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+.navbar-default {
+  border-color: #e7e7e7;
+}
+
+.jumbotron {
+  background-color: #ccccff;
 }
