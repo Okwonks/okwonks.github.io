@@ -47,6 +47,8 @@ body {
 
 footer {
   color: #fff;
+  border-width: 0 0 1px;
+  border-color: #e7e7e7;
 }
 
 h2 {
@@ -114,4 +116,8 @@ body section#contact>div {
 
 .jumbotron {
   background-color: #ccccff;
+}
+
+.form-control {
+  border: none;
 }
