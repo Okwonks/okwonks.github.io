@@ -1,11 +1,20 @@
-# Project Name: My Portfolio
+# Project Name:
+My Portfolio
+
 ## Portfolio Made by [Albert](https://github.com/Okwonks)
 
-This is a project made as part of my course work at [Moringa School](http://moringaschool.com/)
-It is a project that allows me to test my ability to grasp what I learned and how I apply it.
-For a beginner writing this project was *hard!* I took the whole day to complete it.
-I am glad to have a portfolio up and have something to build upon.
+## Description
+This is a one page portfolio web-page made to show case my work and experience as a programmer.
+It is an important project to help in building motivation to grow into a better programmer.
+Building the portfolio was a *fun* project.
 
-### Project Setup: No setup is required
+
+
+### Specs
+1. A visitor of the site should be able to view information on one page.
+2. information should be easy to read and self explanatory.
+3. Contact information should be available to visitors of the site.
 
 The site can be viewed [here](https://okwonks.github.io/my-portfolio/)
+>--
+>&#162 WillisCode | Credit to [Moringa School](http://moringaschool.com/)

@@ -45,6 +45,11 @@ body {
   float: left;
 }
 
+#portfolio {
+  background-color: white;
+  padding: 2%;
+}
+
 footer {
   color: #fff;
   border-width: 0 0 1px;
