@@ -1,60 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- meta data -->
 
   <title>WillisCode</title>
-
   <!-- bootstrap ;) -->
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
   <link href="css/style.css" rel="stylesheet" type="text/css">
-
+  <link rel="stylesheet" href="css/font-mfizz/font-mfizz.css">
+  <link rel="stylesheet" type="text/css" href="css/style.scss">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-  <header class="navbar navbar-default navbar-fixed-top" id="banner" style="top: 0px;">
-    <div class="container">
-      <a rel="nofollow" class="scrollable" href="#top">
-          <img src="images/finder_toolbar_eject.png" alt="not me" title="Not Me">
-        </a>
-      <nav class="collapse navbar-collapse" id="navbar" role="navigation" aria-expanded="false">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="">
-            <a rel="nofollow" class="scrollable" href="#top">About</a>
-          </li>
-          <li class>
-            <a rel="nofollow" class="scrollable" href="#portfolio">Portfolio</a>
-          </li>
-          <li class>
-            <a rel="nofollow" class="scrollable" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-      <!--end of nav-->
+<body>
+  <!-- nav-bar main -->
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-inverse bg-inverse fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">WillisCode</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
     </div>
-    <!--end of container-->
-  </header>
-  <!--end of header-->
+  </nav>
+  <!--end of nav-bar -->
 
-  <div class="page-header">
-    <h1>WillisCode<small>Software Developer</small></h1>
-  </div>
-  <!--end of page-header-->
   <div class="container-fluid">
-    <div class="container">
+    <div id="header">
+
+    </div>
+    <div class="container" id="header">
+      <h1>WillisCode
+        <small>Software Developer</small>
+      </h1>
+      <hr id="header-horizontal">
+
+      <!--end of page-header-->
       <div class="jumbotron">
         <div class="row">
           <div class="col-sm-6 col-md-6">
-            <div class="thumbnail">
-              <img src="images/willis.jpg" alt="WillisCode" title="Picture of Albert taken at Taize">
-              <div class="caption">
-                <h3><em>Albert Oketch</em></h3>
-                <p>This is me. I decided to start programming because I grew an interest in computers. I wanted to know how they work, so here I am.</p>
-              </div>
+            <div class="card">
+              <img class="img-fluid img-thumbnail" src="images/willis.jpg" alt="WillisCode" title="Picture of Albert taken at Taize">
+              <h3>
+                <em>Albert Oketch</em>
+              </h3>
+              <p>This is me. I decided to start programming because I grew an interest in computers. I wanted to know how they
+                work, so here I am.</p>
             </div>
             <!--end of thumbnail-->
           </div>
@@ -79,119 +87,157 @@
         </div>
       </div>
       <!--end of jumbotron-->
-
-        <!--end of row-->
-        <div class="row">
-          <div class="col-sm-8 col-md-6" id="left">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3>What I do for fun!</h3>
-              </div>
-              <div class="panel-body">
-                <ul>
-                  <li>We have a lot of coding!! Mostly front-end.</li>
-                  <li>Then there's some <span class="glyphicon glyphicon-music" aria-hidden="true"></span>! Music!</li>
-                  <li>Reading biographies and sci-fiction books. Yes, I read.</li>
-                </ul>
-              </div>
-            </div>
-            <!--end row with hobbies-->
-          </div>
-
-        </div>
-        <!--end row hobbies-->
-        <!--section on portfolio-->
-        <section id="portfolio">
-          <h2>Portfolio</h2>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <p>Here is what I've done:</p>
-                  <ul>
-                    <li><a href="https://github.com/Okwonks/pet-webpage" title="Course Work">Pet Page.</a></li>
-                    <li><a href="https://github.com/Okwonks/resort-page" title="Resort page">Resort Page Course work.</a></li>
-                    <li><a href="https://github.com/Okwonks/the-first" title="Where it started">Here's where it started.</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!--end links-->
-            <div class="col-md-6">
-              <a href="https://github.com/Okwonks/resort-page">
-                  <img class="img-responsive" src="images/resort.png" alt="resort" title="Resort Page">
-                </a>
-            </div>
-            <!--end row portfolios-->
-        </section>
-        <!--end of section portfolio-->
-
-        <!--section with the contact me-->
-        <section id="contact">
-          <h2>Reach Me</h2>
-          <div class="row">
-            <div class="col-sm-8 col-md-6">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3>Fill it in:</h3>
-                </div>
-                <div class="panel-body">
-                  <form id="contactForm" novalidate>
-                    <div class="form-item">
-                      <label for="name">Name</label>
-                      <input id="name" class="form-control" type="text" placeholder="Name" required>
-                    </div>
-                    <div class="form-item">
-                      <label for="email">Email Address</label>
-                      <input id="email" class="form-control" type="text" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-item">
-                      <label for="phone">Phone Number</label>
-                      <input id="phone" class="form-control" type="text" placeholder="Phone Number" required>
-                    </div>
-                    <div class="form-item">
-                      <label for="message">Message</label>
-                      <input id="message" class="form-control" type="text" placeholder="Message" required>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                  </form>
-                  <!--form end-->
-                  <div>
-                    <br>
-                    <br>
-                    <p>
-                      Feel free to get in touch with. For more on what I can do or if you would like to here my horrible puns. I will be glad to share a laugh over a pun or two. Don't worry, there are no puns here ;)
-                    </p>
-                    <p>I will do my best to reply as soon as possible</p>
-
-                  </div>
-                </div>
-                <!--panel body end-->
-              </div>
-              <!--end of panel-->
-            </div>
-
-          </div>
-          <!--end of row-->
-        </section>
-        <!--end of contact section-->
-        </div>
     </div>
-    <!--end of container-->
+    <!-- end of container header -->
+
+    <div class="row">
+      <div class="col-sm-8 col-md-6" id="left">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3>What I do for fun!</h3>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <li>We have a lot of coding!! Mostly front-end.</li>
+              <li>Then there's some
+                <span class="glyphicon glyphicon-music" aria-hidden="true"></span>! Music!</li>
+              <li>Reading biographies and sci-fiction books. Yes, I read.</li>
+            </ul>
+          </div>
+        </div>
+        <!--end row with hobbies-->
+      </div>
+
+    </div>
   </div>
-  <!--end of container-fluid-->
+  <!--end row hobbies-->
+  <!--section on portfolio-->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card p-3" id="card-hover">
+            <div class="android-hover">
+              <a href="https://appetize.io/app/gcwexxkvuyx21qvuq2x4wyf3f4?device=nexus5&scale=75&orientation=portrait&osVersion=7.1">
+                <i class="fa fa-android" aria-hidden="true" id="android-img"></i>
+              </a>
+            </div>
+            <div class="card-body" id="android-app">
+              <h4 class="card-title">NoteShare</h4>
+              <p class="card-text">This is an application made for Android which allows users to take notes of important things they would like
+                to remember.</p>
+              <p class="card-text">Note Share also allows the user to browse through the most recent tweets on Twitter with the option of saving
+                the tweet.</p>
+              <a href="https://appetize.io/app/gcwexxkvuyx21qvuq2x4wyf3f4?device=nexus5&scale=75&orientation=portrait&osVersion=7.1" class="btn btn-primary">View Application</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card p-3" id="card-hover">
+            <img src="images/heroes.png" class="img-fluid" alt="Java Application">
+            <div class="middle-hover">
+              <a href="https://heroes-unite-mesa.herokuapp.com/">
+                <i class="icon-java" aria-hidden="true" id="java-img"></i>
+              </a>
+            </div>
+            <div class="card-body" id="java-app">
+              <h4 class="card-title">Hair Salon</h4>
+              <p class="card-text">This is an application that is made for users to make a team that they would like to be a part of which can help fight for something they believe in.</p>
+              <a href="https://heroes-unite-mesa.herokuapp.com/" class="btn btn-primary">View application</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card p-3" id="card-hover">
+            <img src="images/toa-taka.png" class="img-fluid img-thumbnail" alt="Toa-taka">
+            <div class="middle-hover text-center">
+              <a href="http://www.toataka.tk">
+                <i class="icon-html5" id="html-5"></i>
+                <i class="icon-css3" id="css-3"></i>
+                <i class="icon-javascript" id="javascript"></i>
+              </a>
+            </div>
+            <div class="card-body" id="web-app">
+              <h4 class="card-title">Toa Taka</h4>
+              <p class="card-text">This is a web-application built to help the community work on the general cleanliness of their environment.</p>
+              <a href="http://www.toataka.tk" class="btn btn-primary">View Application</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end portfolios-->
+  </section>
+  <!--end of section portfolio-->
+
+  <!--section with the contact me-->
+  <section id="contact">
+    <h2>Reach Me</h2>
+    <div class="row">
+      <div class="col-sm-8 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3>Fill it in:</h3>
+          </div>
+          <div class="panel-body">
+            <form id="contactForm" novalidate>
+              <div class="form-item">
+                <label for="name">Name</label>
+                <input id="name" class="form-control" type="text" placeholder="Name" required>
+              </div>
+              <div class="form-item">
+                <label for="email">Email Address</label>
+                <input id="email" class="form-control" type="text" placeholder="Email Address" required>
+              </div>
+              <div class="form-item">
+                <label for="phone">Phone Number</label>
+                <input id="phone" class="form-control" type="text" placeholder="Phone Number" required>
+              </div>
+              <div class="form-item">
+                <label for="message">Message</label>
+                <input id="message" class="form-control" type="text" placeholder="Message" required>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+            <!--form end-->
+            <div>
+              <br>
+              <br>
+              <p>
+                Feel free to get in touch with. For more on what I can do or if you would like to here my horrible puns. I will be glad to
+                share a laugh over a pun or two. Don't worry, there are no puns here ;)
+              </p>
+              <p>I will do my best to reply as soon as possible</p>
+
+            </div>
+          </div>
+          <!--panel body end-->
+        </div>
+        <!--end of panel-->
+      </div>
+
+    </div>
+    <!--end of row-->
+  </section>
+  <!--end of contact section-->
   <footer>
     <div id="footer-below">
-      WillisCode ©
-      <script>document.write(new Date().getFullYear())
+      WillisCode &copy
+      <script>
+        document.write(new Date().getFullYear())
       </script>. All rights reserved.
     </div>
   </footer>
 
 
-  <script type="js/jquery-3.2.1.js"></script>
-  <script type="js/bootstrap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
