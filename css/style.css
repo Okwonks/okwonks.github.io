@@ -62,7 +62,7 @@ body section#contact>div {
 .form-item {
   position: relative;
   margin-bottom: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0.2%;
   border-bottom: 1px solid black;
 }
 
@@ -116,7 +116,10 @@ body section#contact>div {
 
 #portfolio {
  background-color: white;
- padding: 2%;
+ padding: 3%;
+ padding-bottom: 5%;
+ -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+ clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 }
 
 #android-img {
@@ -144,6 +147,6 @@ body section#contact>div {
 }
 
 #card-hover:hover #android-img {
-  transition: 0.9s ease;
+  transition: 0.7s ease;
   color: #1cd300;
 }
