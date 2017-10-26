@@ -129,12 +129,9 @@ body section#contact>div {
   font-size: 9rem;
 }
 
-#css-3 {
+#css-3, #javascript {
   font-size: 5rem;
-}
-
-#javascript {
-  font-size: 5rem;
+  color: #0c0c8f;
 }
 
 #java-img {
