@@ -27,6 +27,10 @@ h2 {
   margin-bottom: 10px;
 }
 
+h3#software-dev {
+  font-size: 1.9em;
+}
+
 img {
   vertical-align: middle;
   border: 0;
@@ -37,10 +41,6 @@ form {
   display: block;
   margin-top: 0em;
   box-sizing: border-box;
-}
-
-header {
-  display: block;
 }
 
 nav {
@@ -55,6 +55,12 @@ body section#contact>div {
   justify-content: space-around;
 }
 
+label {
+  visibility: hidden;
+}
+
+
+/* classes */
 .scroll {
   position: relative;
 }
@@ -91,8 +97,14 @@ body section#contact>div {
   -ms-transform: translate(-50%, -50%);
 }
 
+/* id's */
 #header {
   margin-top: 6%;
+}
+
+#about-paragraph {
+  margin-top: 5%;
+  font-size: 1.2em;
 }
 
 #header-horizontal {
@@ -114,12 +126,24 @@ body section#contact>div {
  float: left;
 }
 
+#about {
+  margin-bottom: 5%;
+}
+
+#skill-list {
+  margin-left: 3%;
+}
+
 #portfolio {
  background-color: white;
  padding: 3%;
- padding-bottom: 10%;
- -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
- clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+ padding-bottom: 15%;
+ -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+ clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+}
+
+#contact {
+  margin-bottom: 3%;
 }
 
 #android-img {
@@ -144,9 +168,43 @@ body section#contact>div {
 
 #card-hover:hover .middle-hover {
   opacity: 1;
+  
+}
+
+#card-hover:hover #web-app {
+  opacity: 0.3;
+  background-color:rgba(0, 0, 0, 0.5);
+  transition: 0.8s ease;
+}
+
+#card-hover:hover #card-btn {
+  opacity: 1;
+}
+
+#card-hover:hover #java-app {
+  opacity: 0.3;
+  background-color:rgba(0, 0, 0, 0.5);
+  transition: 0.8s ease;
 }
 
 #card-hover:hover #android-img {
   transition: 0.7s ease;
   color: #1cd300;
+}
+
+#cards-deck {
+  margin-bottom: 6%;
+}
+
+#contact-form {
+  padding: 3%;
+}
+
+#header {
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+#ui-ux {
+  margin-top: 35%;
 }

@@ -24,12 +24,16 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#">WillisCode</a>
+      <a class="navbar-brand" href="#home">WillisCode</a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="#home">Home
             <span class="sr-only">(current)</span>
           </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+          <!-- About link -->
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#portfolio">Portfolio</a>
@@ -42,71 +46,113 @@
   </nav>
   <!--end of nav-bar -->
 
-  <div class="container-fluid">
-    <div class="container" id="header">
-      <h1>WillisCode
-        <small>Software Developer</small>
-      </h1>
-      <hr id="header-horizontal">
+  <!-- Section for home -->
+  <section id="home">
+    <div class="container-fluid">
+      <div class="container" id="header">
+        <h1>WillisCode
+          <small>Software Developer</small>
+        </h1>
+        <hr id="header-horizontal">
 
-      <!--end of page-header-->
-      <div class="jumbotron">
-        <div class="row">
-          <div class="col-sm-6 col-md-6">
-            <div class="card">
-              <img class="img-fluid img-thumbnail" src="images/willis.jpg" alt="WillisCode" title="Picture of Albert taken at Taize">
-              <h3>
-                <em>Albert Oketch</em>
-              </h3>
-              <p>This is me. I decided to start programming because I grew an interest in computers. I wanted to know how they
-                work, so here I am.</p>
-            </div>
-            <!--end of thumbnail-->
-          </div>
-          <!--end of picture-->
-          <div class="col-sm-6 col-md-4" id="right">
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3>About Me</h3>
-              </div>
-              <div class="panel-body">
-                <strong>Education:</strong>
-                <ul>
-                  <li>May 2017-present: Moringa School</li>
-                  <li>2014-present: UEA, Baraton</li>
-                  <li>2009-2012: St. Mary's School</li>
-                </ul>
-              </div>
-              <!--end panel-body-->
-            </div>
-          </div>
-          <!--end about-me-->
+        <div id="ui-ux">
+          <h1>
+            <i class="icon-html5" id="html5"></i>
+            <i class="fa fa-android" aria-hidden="true" id="android-ui"></i>
+            <i class="icon-java" id="java-ui"></i>
+          </h1>
         </div>
-      </div>
-      <!--end of jumbotron-->
-    </div>
-    <!-- end of container header -->
 
-    <div class="row">
-      <div class="col-sm-8 col-md-6" id="left">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3>What I do for fun!</h3>
+        <!--end of page-header-->
+        <!-- <div class="jumbotron">
+              <div class="row">
+                <div class="col-sm-6 col-md-6">
+                  <div class="card">
+                    <img class="img-fluid img-thumbnail" src="images/willis.jpg" alt="WillisCode" title="Picture of Albert taken at Taize">
+                    <h3>
+                      <em>Albert Oketch</em>
+                    </h3>
+                    <p>This is me. I decided to start programming because I grew an interest in computers. I wanted to know how they
+                      work, so here I am.</p>
+                  </div>
+                  
+                </div>
+                
+                <div class="col-sm-6 col-md-4" id="right">
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                      <h3>About Me</h3>
+                    </div>
+                    <div class="panel-body">
+                      <strong>Education:</strong>
+                      <ul>
+                        <li>May 2017-present: Moringa School</li>
+                        <li>2014-present: UEA, Baraton</li>
+                        <li>2009-2012: St. Mary's School</li>
+                      </ul>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+              </div>
+            </div>
           </div>
-          <div class="panel-body">
-            <ul>
-              <li>We have a lot of coding!! Mostly front-end.</li>
-              <li>Then there's some
-                <span class="glyphicon glyphicon-music" aria-hidden="true"></span>! Music!</li>
-              <li>Reading biographies and sci-fiction books. Yes, I read.</li>
-            </ul>
-          </div>
-        </div>
-        <!--end row with hobbies-->
+      
+          div class="row">
+            <div class="col-sm-8 col-md-6" id="left">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3>What I do for fun!</h3>
+                </div>
+                <div class="panel-body">
+                  <ul>
+                    <li>We have a lot of coding!! Mostly front-end.</li>
+                    <li>Then there's some
+                      <span class="glyphicon glyphicon-music" aria-hidden="true"></span>! Music!</li>
+                    <li>Reading biographies and sci-fiction books. Yes, I read.</li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
       </div>
     </div>
-  </div>
+  </section>
   <!--end row hobbies-->
+
+  <!-- about section -->
+  <section id="about">
+    <br>
+    <br>
+    <br>
+    <h2 id="about">About</h2>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 text-white">
+          <h3 id="software-dev">I'm Albert Oketch, a Software Developer</h3>
+          <p id="about-paragraph">After being introduced to video games at a young age, I always wanted to learn how to build my own software. It's
+            always a delight to build something new for Android or web based applications.</p>
+          <p id="about-paragraph">If you'd like to reach me for more details, feel free to
+            <a href="#contact">contact me</a>
+          </p>
+        </div>
+
+        <div class="col-sm-4 text-white" id="skill-list">
+          <h3 id="software-dev">What I work with:</h3>
+          <br>
+          <h5>Front-end</h5>
+          <p>CSS3, HTML5, ES6</p>
+          <h5>Back-end</h5>
+          <p>NodeJS, PostgreSQL, Java, NoSQL</p>
+        </div>
+
+        <div class="col-sm-4 text-white" id="other-skills">
+          
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- portfolio section -->
   <section id="portfolio">
@@ -116,7 +162,7 @@
     <br>
     <div class="container">
       <!-- Android card -->
-      <div class="card-deck">
+      <div class="card-deck" id="cards-deck">
         <div class="card p-3" id="card-hover">
           <div class="android-hover">
             <a href="https://appetize.io/app/gcwexxkvuyx21qvuq2x4wyf3f4?device=nexus5&scale=75&orientation=portrait&osVersion=7.1">
@@ -143,10 +189,10 @@
             </a>
           </div>
           <div class="card-body p-3" id="java-app">
-            <h4 class="card-title">Hair Salon</h4>
+            <h4 class="card-title">Heroes Unite</h4>
             <p class="card-text">This is an application that is made for users to make a team that they would like to be a part of which can help
               fight for something they believe in.</p>
-            <a href="https://heroes-unite-mesa.herokuapp.com/" class="btn btn-primary">View application</a>
+            <a href="https://heroes-unite-mesa.herokuapp.com/" class="btn btn-primary" id="card-btn">View application</a>
           </div>
         </div>
         <!-- end of Java card -->
@@ -157,14 +203,18 @@
           <div class="middle-hover text-center">
             <a href="http://www.toataka.tk">
               <i class="icon-html5" id="html-5"></i>
+            </a>
+            <a href="http://www.toataka.tk">
               <i class="icon-css3" id="css-3"></i>
+            </a>
+            <a href="http://www.toataka.tk">
               <i class="icon-javascript" id="javascript"></i>
             </a>
           </div>
           <div class="card-body p-3" id="web-app">
             <h4 class="card-title">Toa Taka</h4>
             <p class="card-text">This is a web-application built to help the community work on the general cleanliness of their environment.</p>
-            <a href="http://www.toataka.tk" class="btn btn-primary">View Application</a>
+            <a href="http://www.toataka.tk" class="btn btn-primary" id="card-btn">View Application</a>
           </div>
         </div>
       </div>
@@ -186,12 +236,10 @@
             <h3>Fill it in:</h3>
           </div>
           <div class="card-body">
-            <form id="contactForm" novalidate>
-              <div class="form-row">
-                <div class="col">
-                  <label for="name">Name</label>
-                  <input id="name" class="form-control" type="text" placeholder="Name" required>
-                </div>
+            <form id="contact-form" novalidate>
+              <div class="form-item">
+                <label for="name">Name</label>
+                <input id="name" class="form-control" type="text" placeholder="Name" required>
               </div>
               <div class="form-item">
                 <label for="email">Email Address</label>
@@ -203,26 +251,26 @@
               </div>
               <div class="form-item">
                 <label for="message">Message:</label>
-                <textarea id="message" rows="3" class="form-control" type="text" required></textarea>
+                <textarea id="message" rows="3" class="form-control" type="text" placeholder="Message" required></textarea>
               </div>
               <br>
               <button type="submit" class="btn btn-primary">Send</button>
             </form>
             <!--form end-->
-            <div>
+            <div id="contact-form">
               <br>
               <br>
               <p>
-                Feel free to get in touch with. For more on what I can do or if you would like to here my horrible puns. I will be glad to
+                Feel free to get in touch with. For more on what I can do or if you would like to hear my horrible puns. I will be glad to
                 share a laugh over a pun or two. Don't worry, there are no puns here ;)
               </p>
               <p>I will do my best to reply as soon as possible</p>
 
             </div>
           </div>
-          <!--panel body end-->
+          <!--card-body end-->
         </div>
-        <!--end of panel-->
+        <!-- end of card -->
       </div>
 
     </div>
@@ -238,13 +286,14 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-    crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script> -->
+  <script src="js/jquery-3.2.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
     crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
