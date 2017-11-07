@@ -162,8 +162,9 @@ label {
 }
 
 #java-img {
-  color: rgb(252, 44, 44);
+  color: #000;
   font-size: 10rem;
+  margin-left: 4%;
 }
 
 #card-hover:hover .middle-hover {
@@ -181,15 +182,20 @@ label {
   opacity: 1;
 }
 
-#card-hover:hover #java-app {
+/* #card-hover:hover #java-app {
   opacity: 0.3;
   background-color:rgba(0, 0, 0, 0.5);
   transition: 0.8s ease;
-}
+} */
 
 #card-hover:hover #android-img {
   transition: 0.7s ease;
   color: #1cd300;
+}
+
+#card-hover:hover #java-img {
+  transition: 0.7s ease;
+  color: #e43333;
 }
 
 #cards-deck {
