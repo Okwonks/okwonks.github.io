@@ -152,31 +152,38 @@ label {
 }
 
 #html-5 {
-  color: rgb(252, 44, 44);
+  color: #000;
   font-size: 9rem;
 }
 
-#css-3, #javascript {
+#css-3 {
   font-size: 5rem;
-  color: #0c0c8f;
+  color: #000;
+}
+
+#javascript {
+  font-size: 5rem;
+  color: #000;
 }
 
 #java-img {
   color: #000;
   font-size: 10rem;
   margin-left: 4%;
+  margin-bottom: 0%;
 }
+
+
 
 #card-hover:hover .middle-hover {
-  opacity: 1;
-  
+  opacity: 1; 
 }
 
-#card-hover:hover #web-app {
+/* #card-hover:hover #web-app {
   opacity: 0.3;
   background-color:rgba(0, 0, 0, 0.5);
   transition: 0.8s ease;
-}
+} */
 
 #card-hover:hover #card-btn {
   opacity: 1;
@@ -196,6 +203,21 @@ label {
 #card-hover:hover #java-img {
   transition: 0.7s ease;
   color: #e43333;
+}
+
+#card-hover:hover #html-5 {
+  transition: 0.5s ease;
+  color: rgb(252, 44, 44);
+}
+
+#card-hover:hover #css-3 {
+  transition: 0.6s ease;
+  color: #0c0c8f;
+}
+
+#card-hover:hover #javascript {
+  transition: 0.7s ease;
+  color: rgb(231, 216, 50);
 }
 
 #cards-deck {
