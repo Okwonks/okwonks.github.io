@@ -1,0 +1,9 @@
+{
+  "name": "okwonks.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio made with vue",
+  "main": "index.js",
+  "repository": "git@github.com:Okwonks/okwonks.github.io.git",
+  "author": "albertoketch@gmail.com",
+  "license": "MIT"
+}
