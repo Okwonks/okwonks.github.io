@@ -1,0 +1,6 @@
+<template>
+  <section id="contact">
+    <div class="container-fluid">
+    </div>
+  </section>
+</template>
