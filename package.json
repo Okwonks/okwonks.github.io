@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "Portfolio written with react & vite",
   "repository": "git@github.com:Okwonks/okwonks.github.io.git",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.4",
     "@vitejs/plugin-react": "^4.4.1",
-    "postcss": "^8.5.3",
     "tailwindcss": "^4.1.4",
-    "vite": "^6.3.3"
+    "vite": "^6.3.3",
+    "vite-plugin-commonjs": "^0.10.4"
   },
   "dependencies": {
     "react": "^19.1.0",
