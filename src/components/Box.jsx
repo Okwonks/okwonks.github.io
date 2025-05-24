@@ -1,6 +1,6 @@
-export default Box(props) {
+export default function Box({ className, id, ref, ...props }) {
   return (
-    <div>
+    <div id={id} className={className} ref={ref}>
       {props.children}
     </div>
   );

@@ -1,7 +1,10 @@
+import { Box, Navbar } from './components';
+
 export default function App() {
   return (
-    <div>
+    <Box className="relative z-0 bg-primary">
+      <Navbar />
       <h1>TODO</h1>
-    </div>
+    </Box>
   );
 }
