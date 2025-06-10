@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Box } from '.';
+import Box from './Box';
 
 import { menu, close, open } from '../assets';
 
@@ -34,7 +34,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="w-full flex">
+    <nav className="w-full flex items-center bg-gradient-to-b from-black sm:bg-none p-8 sm:px-16 sm:py-10 fixed z-40 pointer-events-none">
       <Box className="w-full flex justify-between items-start mx-auto">
         <Link
           to="/"
@@ -44,7 +44,7 @@ export default function Navbar() {
             window.scrollTo(0, 0);
           }}
         >
-          <p>AO</p>
+          <p className="text-[26px] lg:text-[36px] font-bold pointer-events-auto cursor-pointer flex">AO</p>
         </Link>
         <ul className="list-none hidden sm:flex flex-col gap-5">
           {navLinks.map(nav => (
@@ -53,6 +53,7 @@ export default function Navbar() {
               className="text-[18px] lg:text-[24px] font-bold pointer-events-auto cursor-pointer"
               onClick={() => setState(prev => ({ ...prev, active:nav.id }))}
             >
+              {state.active === nav.id && <Box className="fixed right-10 w-2 h-6 lg:h-8 bg-black" />}
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
