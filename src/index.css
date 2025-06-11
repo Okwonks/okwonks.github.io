@@ -12,8 +12,6 @@
   min-height: 75vh;
   /* min-width: 2000px; */
   width: 100%;
-  left: 50%; /* Center the image horizontally */
-  transform: translateX(-50%); /* Center the image horizontally */
   display: grid;
   grid-template-areas: "stack";
 }
