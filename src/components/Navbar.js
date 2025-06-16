@@ -11,6 +11,8 @@ const navLinks = ['hero', 'portfolio', 'experience', 'contact']
 export default function Navbar() {
   const [state, setState] = useState({ active:'hero', toggled:false, scrolled:false });
 
+  const isActive = ({ id }) => state.active === id;
+
   useEffect(() => {
     const onScroll = () => {
       setState(prev => ({ ...prev, scrolled:window.scrollY > 100 }));
@@ -44,16 +46,16 @@ export default function Navbar() {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-[26px] lg:text-[36px] font-bold pointer-events-auto cursor-pointer flex">AO</p>
+          <p className="text-white text-[26px] lg:text-[36px] font-bold pointer-events-auto cursor-pointer flex">AO</p>
         </Link>
         <ul className="list-none hidden sm:flex flex-col gap-5">
           {navLinks.map(nav => (
             <li
               key={nav.id}
-              className="text-[18px] lg:text-[24px] font-bold pointer-events-auto cursor-pointer"
+              className={`${isActive(nav) ? 'text-white' : 'text-slate-500'} relative hover:text-white flex items-center text-[18px] lg:text-[24px] font-bold pointer-events-auto cursor-pointer`}
               onClick={() => setState(prev => ({ ...prev, active:nav.id }))}
             >
-              {state.active === nav.id && <Box className="fixed right-10 w-2 h-6 lg:h-8 bg-black" />}
+              {isActive(nav) && <Box className="fixed right-10 w-2 h-6 lg:h-8 bg-black" />}
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
@@ -66,7 +68,7 @@ export default function Navbar() {
             {navLinks.map(nav => (
               <li
                 key={nav.id}
-                className={`font-medium cursor-pointer text-[16px] ${state.active ? 'text-secondary' : 'text-quaternary'}`}
+                className={`font-medium cursor-pointer text-[16px] ${isActive(nav) ? 'text-secondary' : 'text-quaternary'}`}
                 onClick={() => setState(prev => ({ ...prev, toggled:!prev.toggled, active:nav.id }))}
               >
                 <a href={`#${nav.id}`}>{nav.title}</a>

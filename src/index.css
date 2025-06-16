@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #126aa1;
+}
+
 .wrapper {
   height: 100vh;
   overflow-y: auto;
@@ -9,11 +13,18 @@
 
 .parallax {
   position: relative;
-  min-height: 75vh;
+  min-height: 100vh;
   /* min-width: 2000px; */
   width: 100%;
   display: grid;
   grid-template-areas: "stack";
+  background: linear-gradient(to bottom,
+    #1a1a2e 0%,
+    #16213e 25%,
+    #0f3460 50%,
+    #0f3460 75%,
+    #126aa1 100%
+  );
 }
 
 .parallax > * {
