@@ -11,6 +11,11 @@
   perspective: 10px;
 }
 
+.section-span {
+  padding-bottom: 100px;
+  display: block;
+}
+
 .parallax {
   position: relative;
   min-height: 100vh;
