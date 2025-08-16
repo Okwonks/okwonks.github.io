@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 import Box from './Box';
 
-import { Wrapper } from '../utils';
+import { Wrapper, textVariant } from '../utils';
 
 const PROJECTS = [
   { name:'React Web App', description:'Very important project done', image:null },
@@ -15,7 +15,7 @@ const PROJECTS = [
 function Portfolio() {
   return (
     <Box className="text-center md:text-left md:px-20 lg:px-40">
-      <motion.div>
+      <motion.div variants={textVariant()}>
         <h1 className="text-white font-bold md:text-[60px] sm:text-[50px] text-[40px]">Portfolio</h1>
       </motion.div>
       <Box className="mt-10 md:mt-20 flex flex-col gap-10 md:gap-20">

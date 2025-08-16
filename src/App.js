@@ -1,6 +1,12 @@
 import { useRef } from 'react';
 
-import { Box, Hero, Navbar, Portfolio } from './components';
+import {
+  Box,
+  Hero,
+  Navbar,
+  Portfolio,
+  Experience,
+} from './components';
 
 export default function App() {
   const ref = useRef(null);
@@ -16,7 +22,7 @@ export default function App() {
           <Portfolio />
         </Box>
         <Box id="experience" className="relative z-30 bg-primary">
-          <h1>TODO</h1>
+          <Experience />
         </Box>
         <Box id="contact" className="relative z-30 bg-primary">
 
