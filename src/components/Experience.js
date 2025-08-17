@@ -44,8 +44,15 @@ const ExperienceCard = ({ experience, onClick, isActive }) => (
     className="cursor-pointer sm:mb-5 p-5 max-w-xl relative sm:text-left text-center"
     onClick={onClick}
   >
-    <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold sm:pl-8">{experience.title}</h3>
-    <p className="text-md lg:text-lg xl:text-2xl sm:font-medium pt-2 sm:pl-8">{experience.company} | {experience.dates}</p>
+    {isActive && (
+      <Box className="absolute left-0 top-0 bottom-0 w-3 md:w-5 bg-slate-950 my-6 sm:block hidden" />
+    )}
+    <h3 className={`text-xl lg:text-2xl xl:text-3xl font-bold sm:pl-8 ${isActive ? 'text-slate-900' : 'text-slate-400'}`}>
+      {experience.title}
+    </h3>
+    <p className={`text-md lg:text-lg xl:text-2xl sm:font-medium pt-2 sm:pl-8 ${isActive ? 'text-white' : 'text-slate-400'}`}>
+      {experience.company} | {experience.dates}
+    </p>
   </Box>
 );
 
@@ -55,8 +62,9 @@ const ExperienceDetails = ({ details }) => (
       {details.map((detail, id) => (
         <li
           key={`detail-${id}`}
-          className="text-slate-500 font-semibold text-[10px] xs:text-[14px] md:text-[18px] lg:text-[22px] xl:text-[28px] lg:leading-[30px]"
-        >{detail}</li>
+          className="text-slate-400 font-semibold text-[10px] xs:text-[14px] md:text-[18px] lg:text-[22px] xl:text-[28px] lg:leading-[30px]"
+          dangerouslySetInnerHTML={{ __html:detail }}
+        />
       ))}
     </ul>
   </Box>

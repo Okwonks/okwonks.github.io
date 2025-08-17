@@ -25,9 +25,11 @@ export default function Navbar() {
   useEffect(() => {
     const sections = document.querySelectorAll('div[id]');
     const observer = new IntersectionObserver(
-      entries => entries.forEach(entry => {
-        if(entry.isIntersecting) setState(prev => ({ ...prev, hero:entry.target.id }));
-      }),
+      entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) setState(prev => ({ ...prev, active:entry.target.id }));
+        })
+      },
       { threshold:0.2, rootMargin:'0px 0px -50% 0px' },
     );
 
@@ -55,7 +57,7 @@ export default function Navbar() {
               className={`${isActive(nav) ? 'text-white' : 'text-slate-500'} relative hover:text-white flex items-center text-[18px] lg:text-[24px] font-bold pointer-events-auto cursor-pointer`}
               onClick={() => setState(prev => ({ ...prev, active:nav.id }))}
             >
-              {isActive(nav) && <Box className="fixed right-10 w-2 h-6 lg:h-8 bg-black" />}
+              {isActive(nav) && <Box className="fixed right-10 w-2 h-6 lg:h-8 bg-slate-800" />}
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
