@@ -4,6 +4,10 @@
   --color-primary: #126aa1;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
   height: 100vh;
   overflow-y: auto;
