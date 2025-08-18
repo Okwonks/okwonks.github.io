@@ -1,6 +1,6 @@
 export const experiences = [
   {
-    title: 'Software Engineer',
+    title: 'Lead Engineer',
     company: 'PayGo Energy',
     dates: '2021 - Present',
     details: [
@@ -10,7 +10,7 @@ export const experiences = [
     ],
   },
   {
-    title: 'Software Engineer',
+    title: 'Senior Software Engineer',
     company: 'PayGo Energy',
     dates: '2020 - 2021',
     details: [
