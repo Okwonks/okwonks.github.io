@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
 import {
+  About,
   Box,
   Hero,
   Navbar,
@@ -12,22 +13,24 @@ export default function App() {
   const ref = useRef(null);
 
   return (
-    <Box className="relative z-0 bg-primary">
+    <Box className="bg-slate-900 text-slate-100 min-h-screen">
       <Navbar />
-      <Box className="wrapper" ref={ref}>
-        <Box id="hero" className="z-10">
-          <Hero />
+      <main>
+        <Box ref={ref}>
+          <Box id="hero"><Hero /></Box>
+          <Box id="about"><About /></Box>
+          <Box id="portfolio"><Portfolio /></Box>
+          <Box id="experience"><Experience /></Box>
+          <Box id="contact">
+            <h1>Contact HERE</h1>
+          </Box>
         </Box>
-        <Box id="portfolio" className="relative z-30 bg-primary mt-[-2px]">
-          <Portfolio />
+      </main>
+      <footer className="py-10 text-center text-slate-400 text-sm">
+        <Box className="max-w-6xl mx-auto px-6">
+          <p>&copy; {new Date().getFullYear()} Albert Oketch. Built with passion and coffee.</p>
         </Box>
-        <Box id="experience" className="relative z-30 bg-primary">
-          <Experience />
-        </Box>
-        <Box id="contact" className="relative z-30 bg-primary">
-
-        </Box>
-      </Box>
+      </footer>
     </Box>
   );
 }

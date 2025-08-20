@@ -3,21 +3,35 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import Box from './Box';
+import SectionHeader from './SectionHeader';
 
-import { Wrapper, textVariant } from '../utils';
+import { Wrapper, textVariant, fadeIn } from '../utils';
 
 const PROJECTS = [
-  { name:'React Web App', description:'Very important project done', image:null },
-  { name:'React Native App', description:'Very important mobile app done and on play store', image:null },
-  { name:'Another one', description:'Definitely displaying my skill', image:null },
+  {
+    title: 'Featured Project',
+    description: 'A web app for visualizing personalized data. Built with modern technologies and focuses on clean design and smooth user interactions.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop',
+    github: '#',
+    live: '#'
+  },
+  {
+    title: 'Another Project', 
+    description: 'A full-stack application that helps users manage their daily tasks with an intuitive interface and powerful features.',
+    tech: ['TypeScript', 'Next.js', 'PostgreSQL', 'Prisma'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop',
+    github: '#',
+    live: '#'
+  },
 ];
 
 function Portfolio() {
   return (
     <Box className="text-center md:text-left md:px-20 lg:px-40">
-      <motion.div variants={textVariant()}>
-        <h1 className="text-white font-bold md:text-[60px] sm:text-[50px] text-[40px]">Portfolio</h1>
-      </motion.div>
+      <Box className="max-w-4xl mx-auto px-6 lg:px-12 xl:px-16">
+        <SectionHeader title="Portfolio" />
+      </Box>
       <Box className="mt-10 md:mt-20 flex flex-col gap-10 md:gap-20">
         {PROJECTS.map((project, index) =>
           <ProjectInfo key={`project-${index}`} index={index} project={project} />)}
@@ -27,7 +41,7 @@ function Portfolio() {
 } 
 
 const ProjectInfo = ({ index, project }) => {
-  const { name, description, image } = project;
+  const { title, description, image } = project;
 
   const controls = useAnimation();
   const { ref, inView } = useInView({ threshold:0.1 });
@@ -42,15 +56,20 @@ const ProjectInfo = ({ index, project }) => {
     <motion.div
       ref={ref}
       animate={controls}
+      variants={fadeIn('up', 'spring', 0, 0.75)}
       initial="hidden"
-      className={`w-full mt-[-2px] flex flex-col md:flex-row ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-5`}
+      className={`w-full mt-[-2px] flex flex-col md:flex-row ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-5`}
     >
-      <Box>
-        <img src={image} alt={`project-${name}`} className='w-full h-auto object-cover md:rounded-3xl' />
+      <Box className="relative w-full md:w-3/5">
+        <img
+          src={image}
+          alt={`project-${name}`}
+          className="w-full h-auto object-cover md:rounded-3xl"
+        />
       </Box>
-      <Box>
-        <h2>{name}</h2>
-        <p>{description}</p>
+      <Box className={`w-full md:w-2/5 px-6 md:p-16 flex flex-col justify-center ${isEven ? 'text-left md:text-left' : 'text-left md:text-right'}`}>
+        <h3 className="text-white font-medium text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl lg:text-5xl leading-tight">{title}</h3>
+        <p className="mt-4 text-secondary text-sm sm:text-xs md:text-sm lg:text-md xl:text-lg 2xl:text-xl">{description}</p>
       </Box>
     </motion.div>
   );

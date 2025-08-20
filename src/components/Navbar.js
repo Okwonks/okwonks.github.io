@@ -5,7 +5,7 @@ import Box from './Box';
 
 import { menu, close, open } from '../assets';
 
-const navLinks = ['hero', 'portfolio', 'experience', 'contact']
+const navLinks = ['hero', 'about', 'portfolio', 'experience', 'contact']
   .map(l => ({ id:l, title:l.substring(0, 1).toUpperCase() + l.substring(1) }));
 
 export default function Navbar() {
@@ -40,16 +40,17 @@ export default function Navbar() {
   return (
     <nav className="w-full flex items-center bg-gradient-to-b from-black sm:bg-none p-8 sm:px-16 sm:py-10 fixed z-40 pointer-events-none">
       <Box className="w-full flex justify-between items-start mx-auto">
-        <button
+        <Link
           to="/"
           className="flex items-start"
-          onClick={() => {
+          onClick={e => {
+            e.preventDefault();
             setState(prev => ({ ...prev, active:'hero' }));
             window.scrollTo(0, 0);
           }}
         >
           <p className="text-white text-[26px] lg:text-[36px] font-bold pointer-events-auto cursor-pointer flex">AO</p>
-        </button>
+        </Link>
         <ul className="list-none hidden sm:flex flex-col gap-5">
           {navLinks.map(nav => (
             <li
