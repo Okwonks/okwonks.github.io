@@ -40,7 +40,7 @@ export default function Navbar() {
   return (
     <nav className="w-full flex items-center bg-gradient-to-b from-black sm:bg-none p-8 sm:px-16 sm:py-10 fixed z-40 pointer-events-none">
       <Box className="w-full flex justify-between items-start mx-auto">
-        <Link
+        <button
           to="/"
           className="flex items-start"
           onClick={() => {
@@ -49,7 +49,7 @@ export default function Navbar() {
           }}
         >
           <p className="text-white text-[26px] lg:text-[36px] font-bold pointer-events-auto cursor-pointer flex">AO</p>
-        </Link>
+        </button>
         <ul className="list-none hidden sm:flex flex-col gap-5">
           {navLinks.map(nav => (
             <li
