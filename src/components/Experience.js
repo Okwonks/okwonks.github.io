@@ -44,9 +44,9 @@ const ExperienceCard = ({ experience, onClick, isActive }) => (
     onClick={onClick}
   >
     {isActive && (
-      <Box className="absolute left-0 top-0 bottom-0 w-3 md:w-5 bg-slate-950 my-6 sm:block hidden" />
+      <Box className="absolute left-0 top-0 bottom-0 w-3 md:w-5 bg-sky-950 my-2 sm:block hidden" />
     )}
-    <h3 className={`text-xl lg:text-2xl xl:text-3xl font-bold sm:pl-8 ${isActive ? 'text-white' : 'text-slate-400'}`}>
+    <h3 className={`text-xl lg:text-2xl xl:text-3xl font-bold sm:pl-8 ${isActive ? 'text-sky-600' : 'text-slate-400'}`}>
       {experience.title}
     </h3>
     <p className={`text-md lg:text-lg xl:text-2xl sm:font-medium pt-2 sm:pl-8 ${isActive ? 'text-white' : 'text-slate-400'}`}>
