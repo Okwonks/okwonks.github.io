@@ -11,16 +11,18 @@ const icons = [
 
 export default function Hero() {
   return (
-    <section className="">
-      <Box className="">
-        <Box className="">
-          <h1 className="">
+    <section className="min-h-screen flex items-center pt-20">
+      <Box className="max-w-6xl mx-auto px-6">
+        <Box className="max-w-4xl">
+          <h1 className="font-medium md:text-[60px] sm:text-[50px] text-[40px] ">
             ALBERT OKETCH
           </h1>
         </Box>
         <Box className="">
           <Box className="">
-            I enjoy creating <br/> technology for a positive impact on communities.
+            <p className="mt-4 sm:text-2xl">
+              Building scalable systems.<br/>Empowering teams.<br/>Solving complex problems.
+            </p>
           </Box>
         </Box>
       </Box>

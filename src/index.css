@@ -2,6 +2,23 @@
 
 @theme {
   --color-primary: #126aa1;
+
+  --animate-textRotate1: textRotate1 2.4s infinite alternate;
+  --animate-textRotate2: textRotate2 2.4s infinite alternate;
+  /* --animate-textRotate3: textRotate3 2.4s linear alternate infinite; */
+
+  @keyframes textRotate1 {
+    0%, 40% { transform: translate3d(0, 0%, 0) rotateX(0deg); }
+    60%, 100% { transform: translate3d(0, -100%, 0) rotateX(-90deg); }
+  }
+  @keyframes textRotate2 {
+    0%, 40% { transform: translate3d(0, 100%, 0) rotateX(-90deg); }
+    60%, 100% { transform: translate3d(0, 0%, 0) rotateX(0deg); }
+  }
+  /* @keyframes textRotate3 { */
+  /*   0%, 40% { transform: translate3d(0, 200%, 0) rotateX(-180deg); } */
+  /*   60%, 100% { transform: translate3d(0, 100%, 0) rotateX(-90deg); } */
+  /* } */
 }
 
 * {

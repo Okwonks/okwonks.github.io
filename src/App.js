@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import {
   About,
   Box,
+  Contact,
   Hero,
   Navbar,
   Portfolio,
@@ -21,9 +22,7 @@ export default function App() {
           <Box id="about"><About /></Box>
           <Box id="portfolio"><Portfolio /></Box>
           <Box id="experience"><Experience /></Box>
-          <Box id="contact">
-            <h1>Contact HERE</h1>
-          </Box>
+          <Box id="contact"><Contact /></Box>
         </Box>
       </main>
       <footer className="py-10 text-center text-slate-400 text-sm">
