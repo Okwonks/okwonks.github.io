@@ -7,8 +7,10 @@ export default Wrapper(About, 'about');
 
 function About() {
   const skills = [
-    'JavaScript (ES6+)', 'React', 'Node.js',
-    'TypeScript', 'Python', 'MongoDB'
+    'JavaScript (ES6+)', 'React / React Native', 'Node.js',
+    'TypeScript', 'Python', 'MongoDB',
+    'Cloud Run', 'App Engine', 'Cloud Scheduler',
+    'Compute Engine',
   ];
 
   return (
@@ -18,15 +20,20 @@ function About() {
         <Box className="md:col-span-2">
           <Box className="space-y-4 text-slate-400 leading-relaxed">
             <p>
-              Hello! I'm Your Name, a passionate software engineer who enjoys creating things
-              that live on the internet. My interest in web development started back in 2020
-              when I decided to try editing custom themes — turns out hacking together HTML & CSS
-              taught me a lot about the web!
+              I’m a <span className="font-semibold text-white">Lead Software Engineer</span> with over{" "}
+              <span className="font-semibold text-white">8 years of experience</span> building scalable,
+              high-performance web and mobile applications. I specialize in{" "}
+              <span className="font-semibold text-white">full-stack development</span>,{" "}
+              <span className="font-semibold text-white">DevOps</span>, and{" "}
+              <span className="font-semibold text-white">software architecture</span>, helping teams deliver
+              reliable, user-focused solutions.
             </p>
             <p>
-              Fast-forward to today, and I've had the privilege of working at a start-up,
-              a huge corporation, and a digital product studio. My main focus these days is
-              building accessible, inclusive products and digital experiences for a variety of clients.
+              From designing modular{" "}
+              <span className="font-semibold text-white">React/React Native monorepos</span> to integrating{" "}
+              <span className="font-semibold text-white">secure payment systems</span> and engineering{" "}
+              <span className="font-semibold text-white">fault-tolerant architectures</span> that ensure{" "}
+              uninterrupted service delivery, I thrive on solving complex engineering challenges.
             </p>
             <p>Here are a few technologies I've been working with recently:</p>
           </Box>
@@ -45,7 +52,7 @@ function About() {
           <Box className="relative z-10">
             <img
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
-              alt="Your Name"
+              alt="Albert"
               className="w-full max-w-xs rounded filter grayscale group-hover:grayscale-0 transition-all duration-300"
             />
           </Box>
