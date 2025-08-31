@@ -1,8 +1,143 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import * as THREE from 'three';
 
 import Box from './Box';
 
 export default function Hero() {
+  const mountRef = useRef(null);
+  const sceneRef = useRef(null);
+  const animationIdRef = useRef(null);
+
+  useEffect(() => {
+    if(!mountRef.current) return;
+
+    // setup scene
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha:true, antialias:true });
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x000000, 0);
+    mountRef.current.appendChild(renderer.domElement);
+
+    const shapes = [
+      new THREE.BoxGeometry(1, 1, 1),
+      new THREE.SphereGeometry(0.7, 32, 32),
+      new THREE.ConeGeometry(0.7, 1.5, 8),
+      new THREE.OctahedronGeometry(0.8),
+      new THREE.TetrahedronGeometry(0.9),
+    ];
+
+    const material = new THREE
+      .MeshBasicMaterial({ color:0x64ffda, wireframe:true, transparent:true, opacity:0.6 });
+
+    const meshes = [], numShapes = 15;
+    for(let i = 0; i < numShapes; i++) {
+      const geometry = shapes[Math.floor(Math.random() * shapes.length)];
+      const mesh = new THREE.Mesh(geometry, material);
+
+      mesh.position.x = (Math.random() - 0.5) * 20;
+      mesh.position.y = (Math.random() - 0.5) * 20;
+      mesh.position.z = (Math.random() - 0.5) * 20;
+
+      mesh.rotation.x = Math.random() * Math.PI * 2;
+      mesh.rotation.y = Math.random() * Math.PI * 2;
+      mesh.rotation.z = Math.random() * Math.PI * 2;
+
+      const scale = Math.random() * 0.5 + 0.5;
+      mesh.scale.setScalar(scale);
+
+      scene.add(mesh);
+      meshes.push({
+        mesh,
+        rotationSpeed: {
+          x: (Math.random() - 0.5) * 0.02,
+          y: (Math.random() - 0.5) * 0.02,
+          z: (Math.random() - 0.5) * 0.02,
+        },
+        floatSpeed: Math.random() * 0.02 + 0.01,
+        floatOffset: Math.random() * Math.PI * 2,
+      });
+    }
+
+    const particalGeometry = new THREE.BufferGeometry(), particleCount = 200;
+    const particleCount3x = particleCount * 3;
+    const positions = new Float32Array(particleCount3x);
+    for(let idx in positions) {
+      positions[idx] = (Math.random() - 0.5) * 50;
+    }
+
+    particalGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const particalMaterial = new THREE
+      .PointsMaterial({ color:0x64ffda, size:0.05, transparent:true, opacity:0.8 });
+
+    const particles = new THREE.Points(particalGeometry, particalMaterial);
+    scene.add(particles); 
+
+    camera.position.z = 10;
+    sceneRef.current = { scene, camera, renderer, meshes, particles };
+
+    const animate = () => {
+      animationIdRef.current = requestAnimationFrame(animate);
+
+      meshes.forEach((el, idx) => {
+        const { mesh, rotationSpeed, floatSpeed, floatOffset } = el;
+
+        mesh.rotation.x += rotationSpeed.x;
+        mesh.rotation.y += rotationSpeed.y;
+        mesh.rotation.z += rotationSpeed.z;
+
+        mesh.position.x += Math.cos(Date.now() * floatSpeed + floatOffset) * 0.005;
+        mesh.position.y += Math.sin(Date.now() * floatSpeed + floatOffset) * 0.01;
+      });
+
+      particles.rotation.x += 0.0005;
+      particles.rotation.y += 0.001;
+
+      camera.position.x += (0 - camera.position.x) * 0.05;
+      camera.position.y += (0 - camera.position.y) * 0.05;
+
+      renderer.render(scene, camera);
+    };
+
+    animate();
+
+    const handleMouseMove = event => {
+      if(!sceneRef.current) return;
+
+      const mouseX = (event.clientX / window.innerWidth)  * 2 - 1;
+      const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+      sceneRef.current.camera.position.x += mouseX * 0.5;
+      sceneRef.current.camera.position.y += mouseY * 0.5;
+    };
+
+    const handleResize = () => {
+      if(!sceneRef.current) return;
+
+      sceneRef.current.camera.aspect = window.innerWidth / window.innerHeight;
+      sceneRef.current.camera.updateProjectionMatrix();
+      sceneRef.current.renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', handleResize);
+
+      if(animationIdRef.current) cancelAnimationFrame(animationIdRef.current);
+      if(mountRef.current && renderer.domElement) mountRef.current.removeChild(renderer.domElement);
+
+      shapes.forEach(geo => geo.dispose());
+      material.dispose();
+      particalGeometry.dispose();
+      particalMaterial.dispose();
+      renderer.dispose();
+    };
+  }, []);
+
   return (
     <section className="min-h-screen flex items-center pt-20">
       <Box className="max-w-6xl mx-auto px-6">
@@ -53,6 +188,7 @@ export default function Hero() {
           </motion.div>
         </Box>
       </Box>
+      <Box ref={mountRef} style={styles.threeCanvas} />
     </section>
   );
 }
@@ -65,3 +201,14 @@ const textVariants = () => ({
     transition: { type:'spring', duration:1.25 },
   },
 });
+
+const styles = {
+  threeCanvas: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    opacity: 0.7
+  },
+};
