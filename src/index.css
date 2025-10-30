@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #126aa1;
+
+  --animate-textRotate1: textRotate1 2.4s infinite alternate;
+  --animate-textRotate2: textRotate2 2.4s infinite alternate;
+  /* --animate-textRotate3: textRotate3 2.4s linear alternate infinite; */
+
+  @keyframes textRotate1 {
+    0%, 40% { transform: translate3d(0, 0%, 0) rotateX(0deg); }
+    60%, 100% { transform: translate3d(0, -100%, 0) rotateX(-90deg); }
+  }
+  @keyframes textRotate2 {
+    0%, 40% { transform: translate3d(0, 100%, 0) rotateX(-90deg); }
+    60%, 100% { transform: translate3d(0, 0%, 0) rotateX(0deg); }
+  }
+  /* @keyframes textRotate3 { */
+  /*   0%, 40% { transform: translate3d(0, 200%, 0) rotateX(-180deg); } */
+  /*   60%, 100% { transform: translate3d(0, 100%, 0) rotateX(-90deg); } */
+  /* } */
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+.section-span {
+  padding-bottom: 100px;
+  display: block;
+}
+
+.parallax {
+  position: relative;
+  min-height: 100vh;
+  /* min-width: 2000px; */
+  width: 100%;
+  display: grid;
+  grid-template-areas: "stack";
+  background: linear-gradient(to bottom,
+    #1a1a2e 0%,
+    #16213e 25%,
+    #0f3460 50%,
+    #0f3460 75%,
+    #126aa1 100%
+  );
+}
+
+.parallax > * {
+  grid-area: stack;
+  animation: parallax linear;
+  animation-timeline: scroll();
+}
+
+.parallax > img {
+  width: 50%;
+}
+
+.parallax__content {
+  --parallax-speed: 210;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.parallax__cloudrun {
+  --parallax-speed: 320;
+  z-index: 2;
+  margin-top: 5%;
+}
+
+.parallax__psql {
+  --parallax-speed: 320;
+  z-index: 2;
+  margin-top: 5%;
+}
+
+.parallax__node {
+  --parallax-speed: 320;
+  z-index: 2;
+  margin-top: 5%;
+}
+
+.parallax__firebase {
+  --parallax-speed: 320;
+  z-index: 2;
+  margin-top: 5%;
+}
+
+.parallax__mongodb {
+  --parallax-speed: 320;
+  z-index: 2;
+  margin-top: 5%;
+}
+
+.parallax__appengine {
+  --parallax-speed: 320;
+  z-index: 2;
+  margin-top: 5%;
+}
+
+@media (min-width: 1024px) {
+  .parallax__content {
+    flex-direction: row;
+    text-align: left;
+  }
+}
