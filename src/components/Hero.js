@@ -8,6 +8,8 @@ export default function Hero() {
   const mountRef = useRef(null);
   const sceneRef = useRef(null);
   const animationIdRef = useRef(null);
+  const mouseTargetRef = useRef({ x:0, y:0 });
+  const timeRef = useRef(0);
 
   useEffect(() => {
     if(!mountRef.current) return;
@@ -37,9 +39,13 @@ export default function Hero() {
       const geometry = shapes[Math.floor(Math.random() * shapes.length)];
       const mesh = new THREE.Mesh(geometry, material);
 
-      mesh.position.x = (Math.random() - 0.5) * 20;
-      mesh.position.y = (Math.random() - 0.5) * 20;
-      mesh.position.z = (Math.random() - 0.5) * 20;
+      const initialX = (Math.random() - 0.5) * 20;
+      const initialY = (Math.random() - 0.5) * 20;
+      const initialZ = (Math.random() - 0.5) * 20;
+
+      mesh.position.x = initialX;
+      mesh.position.y = initialY;
+      mesh.position.z = initialZ;
 
       mesh.rotation.x = Math.random() * Math.PI * 2;
       mesh.rotation.y = Math.random() * Math.PI * 2;
@@ -51,12 +57,13 @@ export default function Hero() {
       scene.add(mesh);
       meshes.push({
         mesh,
+        initialPosition: { x:initialX, y:initialY, z:initialZ },
         rotationSpeed: {
           x: (Math.random() - 0.5) * 0.02,
           y: (Math.random() - 0.5) * 0.02,
           z: (Math.random() - 0.5) * 0.02,
         },
-        floatSpeed: Math.random() * 0.02 + 0.01,
+        floatSpeed: Math.random() * 0.005 + 0.002,
         floatOffset: Math.random() * Math.PI * 2,
       });
     }
@@ -81,22 +88,24 @@ export default function Hero() {
     const animate = () => {
       animationIdRef.current = requestAnimationFrame(animate);
 
-      meshes.forEach((el, idx) => {
-        const { mesh, rotationSpeed, floatSpeed, floatOffset } = el;
+      timeRef.current += 0.016;
+
+      meshes.forEach(el => {
+        const { mesh, initialPosition, rotationSpeed, floatSpeed, floatOffset } = el;
 
         mesh.rotation.x += rotationSpeed.x;
         mesh.rotation.y += rotationSpeed.y;
         mesh.rotation.z += rotationSpeed.z;
 
-        mesh.position.x += Math.cos(Date.now() * floatSpeed + floatOffset) * 0.005;
-        mesh.position.y += Math.sin(Date.now() * floatSpeed + floatOffset) * 0.01;
+        mesh.position.x = initialPosition.x + Math.cos(timeRef.current * floatSpeed + floatOffset) * 0.005;
+        mesh.position.y = initialPosition.y + Math.sin(timeRef.current * floatSpeed + floatOffset) * 0.01;
       });
 
       particles.rotation.x += 0.0005;
       particles.rotation.y += 0.001;
 
-      camera.position.x += (0 - camera.position.x) * 0.05;
-      camera.position.y += (0 - camera.position.y) * 0.05;
+      camera.position.x += (mouseTargetRef.current.x - camera.position.x) * 0.05;
+      camera.position.y += (mouseTargetRef.current.y - camera.position.y) * 0.05;
 
       renderer.render(scene, camera);
     };
@@ -108,8 +117,8 @@ export default function Hero() {
 
       const mouseX = (event.clientX / window.innerWidth)  * 2 - 1;
       const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-      sceneRef.current.camera.position.x += mouseX * 0.5;
-      sceneRef.current.camera.position.y += mouseY * 0.5;
+      mouseTargetRef.current.x = mouseX * 10;
+      mouseTargetRef.current.y = mouseY * 8;
     };
 
     const handleResize = () => {
@@ -139,7 +148,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center pt-20">
+    <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
       <Box className="max-w-6xl mx-auto px-6">
         <Box className="max-w-4xl">
           <h1 className="font-medium md:text-[60px] sm:text-[50px] text-[40px] ">
