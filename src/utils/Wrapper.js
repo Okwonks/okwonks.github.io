@@ -12,13 +12,13 @@ const staggerContainer = (staggerChildren, delayChildren) => {
   };
 };
 
-export default function Wrapper(Component, name) {
+export default function Wrapper(Component, name, amount = 0.5) {
   return () => (
     <motion.section
       variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
-      viewport={{ once:true, amount:0.5 }}
+      viewport={{ once:true, amount }}
       className='px-0 2xl:px-60 py-10 2xl:py-16 max-w-full mx-auto relative z-0'
     >
       <span className="section-span" id={name}>
